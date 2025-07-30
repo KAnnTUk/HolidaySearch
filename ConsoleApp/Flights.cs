@@ -33,8 +33,16 @@ namespace ConsoleApp
         public static List<Flight> SearchForFlights(string fromAirport, string toAirport)
         {
             var flights = ReadFlightsFromJson();
-            return flights.FindAll(flight => flight.from.Equals(fromAirport, StringComparison.OrdinalIgnoreCase) &&
+
+            if (!String.IsNullOrEmpty(fromAirport))
+            {
+                return flights.FindAll(flight => flight.from.Equals(fromAirport, StringComparison.OrdinalIgnoreCase) &&
                                              flight.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
+            }
+            else
+            {
+                return flights.FindAll(flight => flight.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
+            }
         }
     }
 }
