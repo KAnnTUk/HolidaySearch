@@ -34,15 +34,15 @@ namespace ConsoleApp
         {
             var flights = ReadFlightsFromJson();
 
-            if (!String.IsNullOrEmpty(fromAirport))
-            {
-                return flights.FindAll(flight => flight.from.Equals(fromAirport, StringComparison.OrdinalIgnoreCase) &&
-                                             flight.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
-            }
-            else
-            {
-                return flights.FindAll(flight => flight.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
-            }
+            var query = flights.AsEnumerable();
+
+            if (!string.IsNullOrEmpty(fromAirport))
+                query = query.Where(f => f.from.Equals(fromAirport, StringComparison.OrdinalIgnoreCase));
+
+            if (!string.IsNullOrEmpty(toAirport))
+                query = query.Where(f => f.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
+
+            return query.ToList();
         }
     }
 }
