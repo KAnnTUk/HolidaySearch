@@ -41,5 +41,16 @@ namespace HolidaySearch
             var flights = Flight.SearchForFlights(fromAirport, toAirport);
             Assert.That(flights.Any(f => f.from == fromAirport), Is.True);
         }
+
+        [Test]
+        public void FlightsFromMANToAGPOnSetDate_ReturnsFlightsFromMANToAGPOnDate()
+        {
+            string fromAirport = "MAN";
+            string toAirport = "AGP";
+            DateTime departureDate = new DateTime(2023, 10, 1);
+            var flights = Flight.SearchForFlights(fromAirport, toAirport, departureDate);
+            Assert.That(flights.All(f => f.from == fromAirport && f.to == toAirport &&
+                f.departure_date.Date == departureDate.Date), Is.True);
+        }
     }
 }
