@@ -18,10 +18,19 @@ namespace HolidaySearch
         [Test]
         public void FlightsFromManchesterToMalaga_ReturnsFlightsFromManchesterToMalaga()
         {
-            string fromAirport = "MAN"; 
-            string toAirport = "AGP"; 
+            string fromAirport = "MAN";
+            string toAirport = "AGP";
             var flights = Flight.SearchForFlights(fromAirport, toAirport);
             Assert.That(flights.All(f => f.from == "MAN" && f.to == "AGP"), Is.True);
+        }
+
+        [Test]
+        public void FlightsFromAnywhereToMallorca_ReturnAllFlightsToMallorca()
+        {
+            string fromAirport = "";
+            string toAirport = "PMI";
+            var flights = Flight.SearchForFlights(fromAirport, toAirport);
+            Assert.That(flights.Any(f => f.to == toAirport), Is.True);
         }
     }
 }
