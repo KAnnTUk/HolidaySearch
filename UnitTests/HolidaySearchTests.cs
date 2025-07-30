@@ -47,7 +47,7 @@ namespace HolidaySearch
         {
             string fromAirport = "MAN";
             string toAirport = "AGP";
-            DateTime departureDate = new DateTime(2023, 10, 1);
+            DateTime departureDate = new DateTime(2023, 7, 1);
             var flights = Flight.SearchForFlights(fromAirport, toAirport, departureDate);
             Assert.That(flights.All(f => f.from == fromAirport && f.to == toAirport &&
                 f.departure_date.Date == departureDate.Date), Is.True);

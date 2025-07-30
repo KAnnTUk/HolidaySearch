@@ -30,7 +30,7 @@ namespace ConsoleApp
         }
 
         // Searches for flights based on departure and arrival airports
-        public static List<Flight> SearchForFlights(string fromAirport, string toAirport)
+        public static List<Flight> SearchForFlights(string fromAirport, string toAirport, DateTime? departureDate = null)
         {
             var flights = ReadFlightsFromJson();
 
@@ -41,6 +41,9 @@ namespace ConsoleApp
 
             if (!string.IsNullOrEmpty(toAirport))
                 query = query.Where(f => f.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
+
+            if (departureDate.HasValue)
+                query = query.Where(f => f.departure_date.Date == departureDate.Value.Date);
 
             return query.ToList();
         }
