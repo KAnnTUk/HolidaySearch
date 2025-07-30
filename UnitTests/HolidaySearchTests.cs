@@ -32,5 +32,14 @@ namespace HolidaySearch
             var flights = Flight.SearchForFlights(fromAirport, toAirport);
             Assert.That(flights.Any(f => f.to == toAirport), Is.True);
         }
+
+        [Test]
+        public void FlightsManchestertoAnywhere_ReturnAllFlightsFromManchester()
+        {
+            string fromAirport = "MAN";
+            string toAirport = "";
+            var flights = Flight.SearchForFlights(fromAirport, toAirport);
+            Assert.That(flights.Any(f => f.from == fromAirport), Is.True);
+        }
     }
 }
