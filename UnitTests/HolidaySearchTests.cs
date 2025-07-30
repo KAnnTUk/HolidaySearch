@@ -12,8 +12,16 @@ namespace HolidaySearch
         public void AllFlightsRequested_AllFlightsReturned()
         {
             var flights = Flight.ReadFlightsFromJson();
+            Assert.That(flights.Any(), Is.True);
+        }
 
-            Assert.That(flights, Is.Not.Null);
+        [Test]
+        public void FlightsFromManchesterToMalaga_ReturnsFlightsFromManchesterToMalaga()
+        {
+            string fromAirport = "MAN"; 
+            string toAirport = "AGP"; 
+            var flights = Flight.SearchForFlights(fromAirport, toAirport);
+            Assert.That(flights, Is.Not.Empty);
         }
     }
 }
