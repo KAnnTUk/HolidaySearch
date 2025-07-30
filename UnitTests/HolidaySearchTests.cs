@@ -21,7 +21,7 @@ namespace HolidaySearch
             string fromAirport = "MAN"; 
             string toAirport = "AGP"; 
             var flights = Flight.SearchForFlights(fromAirport, toAirport);
-            Assert.That(flights, Is.Not.Empty);
+            Assert.That(flights.All(f => f.from == "MAN" && f.to == "AGP"), Is.True);
         }
     }
 }
