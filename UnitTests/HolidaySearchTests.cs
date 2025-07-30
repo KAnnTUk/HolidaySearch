@@ -1,5 +1,7 @@
 ﻿
 using NUnit.Framework;
+using System.Collections.Generic;
+using ConsoleApp;
 
 namespace HolidaySearch
 {
@@ -7,10 +9,11 @@ namespace HolidaySearch
     public class HolidaySearchTests
     {
         [Test]
-        public void TestMethod1()
+        public void AllFlightsRequested_AllFlightsReturned()
         {
-            // This is a placeholder test. Replace with actual logic as needed.
-            Assert.That(true, Is.True);
+            var flights = Flight.ReadFlightsFromJson();
+
+            Assert.That(flights, Is.Not.Null);
         }
     }
 }

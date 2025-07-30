@@ -666,6 +666,16 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "ConsoleApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/ConsoleApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ConsoleApp.dll": {}
+        }
       }
     }
   },
@@ -1651,10 +1661,16 @@
         "system.reflection.metadata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ConsoleApp/1.0.0": {
+      "type": "project",
+      "path": "../ConsoleApp/ConsoleApp.csproj",
+      "msbuildProject": "../ConsoleApp/ConsoleApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "ConsoleApp >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.14.1",
       "NUnit >= 4.2.2",
       "NUnit.Analyzers >= 4.4.0",
@@ -1686,7 +1702,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/ConsoleApp.csproj": {
+              "projectPath": "/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/ConsoleApp.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

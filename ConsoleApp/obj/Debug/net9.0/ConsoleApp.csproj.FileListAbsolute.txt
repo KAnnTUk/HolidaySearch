@@ -1,0 +1,15 @@
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/bin/Debug/net9.0/ConsoleApp
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/bin/Debug/net9.0/ConsoleApp.deps.json
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/bin/Debug/net9.0/ConsoleApp.runtimeconfig.json
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/bin/Debug/net9.0/ConsoleApp.dll
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/bin/Debug/net9.0/ConsoleApp.pdb
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.AssemblyInfoInputs.cache
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.AssemblyInfo.cs
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.csproj.CoreCompileInputs.cache
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.sourcelink.json
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.dll
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/refint/ConsoleApp.dll
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.pdb
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ConsoleApp.genruntimeconfig.cache
+/Users/tidmarshk/Documents/GitHub/HolidaySearch/ConsoleApp/obj/Debug/net9.0/ref/ConsoleApp.dll
