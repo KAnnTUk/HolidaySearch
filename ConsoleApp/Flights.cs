@@ -32,20 +32,13 @@ namespace ConsoleApp
         // Searches for flights based on departure and arrival airports
         public static List<Flight> SearchForFlights(string fromAirport, string toAirport, DateTime? departureDate = null)
         {
-            var flights = ReadFlightsFromJson();
-
-            var query = flights.AsEnumerable();
-
-            if (!string.IsNullOrEmpty(fromAirport))
-                query = query.Where(f => f.from.Equals(fromAirport, StringComparison.OrdinalIgnoreCase));
-
-            if (!string.IsNullOrEmpty(toAirport))
-                query = query.Where(f => f.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase));
-
-            if (departureDate.HasValue)
-                query = query.Where(f => f.departure_date.Date == departureDate.Value.Date);
-
-            return query.ToList();
+            return ReadFlightsFromJson()
+            .Where(f =>
+                (string.IsNullOrEmpty(fromAirport) || f.from.Equals(fromAirport, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(toAirport) || f.to.Equals(toAirport, StringComparison.OrdinalIgnoreCase)) &&
+                (!departureDate.HasValue || f.departure_date.Date == departureDate.Value.Date)
+            )
+            .ToList();
         }
     }
 }
