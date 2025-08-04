@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using ConsoleApp;
+using HolidaySearch;
 
 namespace HolidaySearch.UnitTests
 {
@@ -18,18 +19,19 @@ namespace HolidaySearch.UnitTests
                 departureDate = new DateTime(2023, 7, 1),
                 duration = 7,
             };
-            var holidays = Holiday.SearchForHolidays(searchCriteria);
+
+            var holidays = HolidaySearches.SearchForHolidays(searchCriteria);
 
             Assert.That(holidays.Any(), Is.True);
 
-            Assert.That(holidays.Results.First().TotalPrice, Is.EqualTo(245 + (83 * 7)));
-            Assert.That(holidays.Results.First().Flight.Id, Is.EqualTo(1));
-            Assert.That(holidays.Results.First().Flight.DepartingFrom, Is.EqualTo("MAN"));
-            Assert.That(holidays.Results.First().Flight.TravalingTo, Is.EqualTo("AGP'"));
-            Assert.That(holidays.Results.First().Flight.Price, Is.EqualTo(245));
-            Assert.That(holidays.Results.First().Hotel.Id, Is.EqualTo(9));
-            Assert.That(holidays.Results.First().Hotel.Name, Is.EqualTo("Hotel Costa del Sol"));
-            Assert.That(holidays.Results.First().Hotel.Price, Is.EqualTo(83));
+            Assert.That(holidays.First().TotalPrice, Is.EqualTo(245 + (83 * 7)));
+            Assert.That(holidays.First().Flight.id, Is.EqualTo(2));
+            Assert.That(holidays.First().Flight.from, Is.EqualTo("MAN"));
+            Assert.That(holidays.First().Flight.to, Is.EqualTo("AGP"));
+            Assert.That(holidays.First().Flight.price, Is.EqualTo(245));
+            Assert.That(holidays.First().Hotel.id, Is.EqualTo(9));
+            Assert.That(holidays.First().Hotel.name, Is.EqualTo("Nh Malaga"));
+            Assert.That(holidays.First().Hotel.price_per_night, Is.EqualTo(83));
 
         }
     }
