@@ -14,5 +14,14 @@ namespace HolidaySearch.UnitTests
             var hotels = Hotel.ReadHotelsFromJson();
             Assert.That(hotels.Any(), Is.True);
         }
+
+        [Test]
+        public void HotelsSpecificDateAndDuration_ReturnsHotelsForSpecificDateAndDuration()
+        {
+            string arrivalDate = "2022-11-05";
+            int nights = 7;
+            var hotels = Hotel.SearchForHotels(arrivalDate, nights);
+            Assert.That(hotels.All(h => h.arrival_date == arrivalDate && h.nights == nights), Is.True);
+        }
     }
 }
