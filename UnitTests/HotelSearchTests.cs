@@ -23,5 +23,15 @@ namespace HolidaySearch.UnitTests
             var hotels = Hotel.SearchForHotels(arrivalDate, nights);
             Assert.That(hotels.All(h => h.arrival_date == arrivalDate && h.nights == nights), Is.True);
         }
+
+        [Test]
+        public void HotelsSearchBasedonDateAiportAndDuration_ReturnsHotelsForSpecificDateAirportAndDuration()
+        {
+            string arrivalDate = "2022-11-05";
+            int nights = 7;
+            string airport = "LHR";
+            var hotels = Hotel.SearchForHotels(arrivalDate, nights, airport);
+            Assert.That(hotels.All(h => h.arrival_date == arrivalDate && h.nights == nights && h.airport.Equals(airport, StringComparison.OrdinalIgnoreCase)), Is.True);
+        }   
     }
 }
