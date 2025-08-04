@@ -29,9 +29,10 @@ namespace HolidaySearch.UnitTests
         {
             string arrivalDate = "2022-11-05";
             int nights = 7;
-            string airport = "LHR";
+            string airport = "TFS";
             var hotels = Hotel.SearchForHotels(arrivalDate, nights, airport);
-            Assert.That(hotels.All(h => h.arrival_date == arrivalDate && h.nights == nights && h.airport.Equals(airport, StringComparison.OrdinalIgnoreCase)), Is.True);
+            Assert.That(hotels.All(h => h.arrival_date == arrivalDate && h.nights == nights &&
+            h.local_airports.Any(a => a.Equals(airport, StringComparison.OrdinalIgnoreCase))), Is.True);
         }   
     }
 }

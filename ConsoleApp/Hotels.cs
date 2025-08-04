@@ -39,5 +39,16 @@ namespace ConsoleApp
             )
             .ToList();
         }
+
+        // Searches for hotels based on arrival date, number of nights, and airport
+        public static List<Hotel> SearchForHotels(string arrivalDate, int nights, string airport)
+        {
+            return ReadHotelsFromJson()
+            .Where(h =>
+                h.arrival_date.Equals(arrivalDate, StringComparison.OrdinalIgnoreCase) &&
+                h.nights == nights && h.local_airports != null && h.local_airports.Any(a => a.Equals(airport, StringComparison.OrdinalIgnoreCase))
+            )
+            .ToList();
+        }
     }
 }
