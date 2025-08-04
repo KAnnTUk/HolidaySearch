@@ -3,10 +3,10 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using ConsoleApp;
 
-namespace HolidaySearch
+namespace HolidaySearch.UnitTests
 {
     [TestFixture]
-    public class HolidaySearchTests
+    public class FlightSearchTests
     {
         [Test]
         public void AllFlightsRequested_AllFlightsReturned()
